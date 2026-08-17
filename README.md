@@ -8,6 +8,19 @@
 
 ---
 
+## 🚀 Hızlı Kurulum & Kullanım Guide
+
+Kullanıcıların komut satırı ile uğraşmasına gerek yoktur. Tüm işlemler otomatik bir arayüz/başlatıcı üzerinden yürütülür.
+
+### Adım Adım Kurulum:
+1. Sağ tarafta bulunan **[Releases](../../releases)** bölümüne gidin.
+2. En son sürüme ait `.zip` arşivini indirin.
+3. İndirdiğiniz `.zip` dosyasını bir klasöre çıkarın (ayıklayın).
+4. Klasör içerisindeki **`LauncherApp.exe`** uygulamasını **Yönetici Olarak** çalıştırın.
+5. Açılan arayüzden uygulamak istediğiniz optimizasyon modunu (Windows veya Android ADB) seçin. Otomatik kurulum tamamlanacaktır.
+
+---
+
 ## 📌 Özellikler
 
 * **⚡ Düşük Gecikme (Low Latency):** TCP/IP, DNS, Ağ Bağdaştırıcısı ve Giriş Gecikmesi (Input Lag) ayarlarını en düşük seviyeye indirir.
@@ -18,91 +31,9 @@
 
 ---
 
-## 📂 Proje Yapısı
-
-```text
-muk-optimizer/
-├── commands/
-│   ├── bat/                  # Windows & Android Batch Komutları
-│   │   ├── Balanced.bat
-│   │   ├── Compile.bat
-│   │   ├── Extra_Boost.bat
-│   │   ├── Hardware.bat
-│   │   ├── Lite_ps.bat
-│   │   ├── Power_Saving.bat
-│   │   ├── Qualcomm_only.bat
-│   │   └── Vulkan.bat
-│   ├── ps1/                  # Windows PowerShell Modülleri
-│   │   └── winoptimizer.ps1
-│   └── sh/                   # Android Shell (ADB) Modülleri
-│       ├── Balanced.sh
-│       ├── Compile.sh
-│       ├── Extra_Boost.sh
-│       ├── Hardware.sh
-│       ├── Lite_ps.sh
-│       ├── Power_Saving.sh
-│       ├── Qualcomm_only.sh
-│       └── Vulkan.sh
-└── index.html                # Proje Web Landing Page
-```
-
----
-
-## 🛠️ Nasıl Çalışır? & Kurulum Rehberi
-
-### 1. Windows Optimizasyonu (PowerShell & Batch)
-
-Windows tarafındaki scriptler, `regedit` (Kayıt Defteri) ayarlarını günceller, gereksiz Windows servislerini durdurur ve güç planlarını yüksek performansa ayarlar.
-
-#### PowerShell Scriptini Çalıştırma:
-1. PowerShell'i **Yönetici Olarak** açın.
-2. Komut çalıştırma politikasını geçici olarak izinli hale getirin:
-   ```powershell
-   Set-ExecutionPolicy Unrestricted -Scope Process
-   ```
-3. Modülün bulunduğu dizine geçip scripti çalıştırın:
-   ```powershell
-   cd commands/ps1/
-   .\winoptimizer.ps1
-   ```
-
-#### Batch Dosyalarını Çalıştırma:
-* `commands/bat/` klasöründeki ihtiyacınıza uygun `.bat` dosyasına sağ tıklayıp **Yönetici Olarak Çalıştır** demeniz yeterlidir.
-
----
-
-### 2. Android Optimizasyonu (ADB Scriptleri)
-
-Android tarafında Root yetkisi gerekmeden ADB (Android Debug Bridge) shell komutları aracılığıyla arka plan kısıtlamaları, render motoru tercihleri (Vulkan/OpenGL) ve cihaz modları uygulanır.
-
-#### Ön Gereksinimler:
-* Bilgisayarınızda **ADB Tools** kurulu olmalıdır.
-* Telefonunuzda **Geliştirici Seçenekleri > USB Hata Ayıklama (USB Debugging)** açık olmalıdır.
-
-#### Kurulum ve Çalıştırma Adımları:
-
-1. **Cihaz Bağlantısını Kontrol Edin:**
-   ```bash
-   adb devices
-   ```
-   *(Ekranda cihaz kodunuzun ve "device" ibaresinin göründüğünden emin olun.)*
-
-2. **İstediğiniz Modu Uygulayın:**
-   * **Linux/macOS veya WSL kullanıyorsanız (`.sh` dosyaları):**
-     ```bash
-     cd commands/sh/
-     chmod +x Extra_Boost.sh
-     ./Extra_Boost.sh
-     ```
-   * **Windows CMD/PowerShell kullanıyorsanız (`.bat` dosyaları):**
-     ```cmd
-     cd commands/bat
-     Extra_Boost.bat
-     ```
-
----
-
 ## ⚙️ Mod Yapılandırma Profilleri
+
+`LauncherApp.exe` üzerinden seçebileceğiniz hazır profiller:
 
 | Mod | Açıklama |
 | :--- | :--- |
@@ -115,9 +46,23 @@ Android tarafında Root yetkisi gerekmeden ADB (Android Debug Bridge) shell komu
 
 ---
 
+## 📂 Proje Yapısı
+
+```text
+muk-optimizer/
+├── LauncherApp.exe           # Ana Otomatik Başlatıcı Uygulaması
+├── commands/
+│   ├── bat/                  # Windows & Android Batch Komutları
+│   ├── ps1/                  # Windows PowerShell Modülleri
+│   └── sh/                   # Android Shell (ADB) Modülleri
+└── index.html                # Proje Web Landing Page
+```
+
+---
+
 ## ⚠️ Önemli Uyarı ve Yasal Sorumluluk Reddi
 
-> **Yasal Uyarı:** Bu araçlar sistem kaynaklarını yüksek seviyede manipüle eder. Scriptleri çalıştırmadan önce Windows üzerinde bir **Sistem Geri Yükleme Noktası (System Restore Point)** oluşturmanız ve Android cihazınızın yedeğini almanız şiddetle tavsiye edilir. Oluşabilecek sistem kararsızlıklarından kullanıcı sorumludur.
+> **Yasal Uyarı:** Bu araçlar sistem kaynaklarını yüksek seviyede manipüle eder. Optimizasyonu uygulamadan önce Windows üzerinde bir **Sistem Geri Yükleme Noktası (System Restore Point)** oluşturmanız ve Android cihazınızın yedeğini almanız tavsiye edilir. Oluşabilecek sistem kararsızlıklarından kullanıcı sorumludur.
 
 ---
 
