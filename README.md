@@ -51,11 +51,10 @@ Kullanıcıların komut satırı ile uğraşmasına gerek yoktur. Tüm işlemler
 ```text
 muk-optimizer/
 ├── LauncherApp.exe           # Ana Otomatik Başlatıcı Uygulaması
-├── commands/
-│   ├── bat/                  # Windows & Android Batch Komutları
-│   ├── ps1/                  # Windows PowerShell Modülleri
-│   └── sh/                   # Android Shell (ADB) Modülleri
-└── index.html                # Proje Web Landing Page
+└── commands/
+    ├── bat/                  # Windows & Android Batch Komutları
+    ├── ps1/                  # Windows PowerShell Modülleri
+    └── sh/                   # Android Shell (ADB) Modülleri
 ```
 
 ---
