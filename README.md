@@ -33,7 +33,7 @@ Kullanıcıların komut satırı ile uğraşmasına gerek yoktur. Tüm işlemler
 
 ## ⚙️ Mod Yapılandırma Profilleri
 
-`LauncherApp.exe` üzerinden seçebileceğiniz hazır profiller:
+`mukoptimizerapp.exe` üzerinden seçebileceğiniz hazır profiller:
 
 | Mod | Açıklama |
 | :--- | :--- |
