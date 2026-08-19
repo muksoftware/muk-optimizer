@@ -50,7 +50,7 @@ Kullanıcıların komut satırı ile uğraşmasına gerek yoktur. Tüm işlemler
 
 ```text
 muk-optimizer/
-├── LauncherApp.exe           # Ana Otomatik Başlatıcı Uygulaması
+├── mukoptimizerapp.exe           # Ana Otomatik Başlatıcı Uygulaması
 └── commands/
     ├── bat/                  # Android Batch Komutları
     ├── ps1/                  # Windows PowerShell Modülleri
