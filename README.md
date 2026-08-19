@@ -16,7 +16,7 @@ Kullanıcıların komut satırı ile uğraşmasına gerek yoktur. Tüm işlemler
 1. Sağ tarafta bulunan **[Releases](../../releases)** bölümüne gidin.
 2. En son sürüme ait `.zip` arşivini indirin.
 3. İndirdiğiniz `.zip` dosyasını bir klasöre çıkarın (ayıklayın).
-4. Klasör içerisindeki **`LauncherApp.exe`** uygulamasını **Yönetici Olarak** çalıştırın.
+4. Klasör içerisindeki **`mukoptimizerapp.exe`** uygulamasını **Yönetici Olarak** çalıştırın.
 5. Açılan arayüzden uygulamak istediğiniz optimizasyon modunu (Windows veya Android ADB) seçin. Otomatik kurulum tamamlanacaktır.
 
 ---
